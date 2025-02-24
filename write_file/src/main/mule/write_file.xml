@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:file="http://www.mulesoft.org/schema/mule/file" xmlns:http="http://www.mulesoft.org/schema/mule/http"
+	xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd
+http://www.mulesoft.org/schema/mule/file http://www.mulesoft.org/schema/mule/file/current/mule-file.xsd">
+	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="6ac242b1-bb82-43f1-b696-9e0a08d98c8e" >
+		<http:listener-connection host="localhost" port="8081" />
+	</http:listener-config>
+	<flow name="write_fileFlow" doc:id="390bf1bc-14e9-4a1e-afd0-de13931e3a2a" >
+		<http:listener doc:name="Listener" doc:id="775c99c9-8403-4d1a-883c-ae6ed040b24f" config-ref="HTTP_Listener_config" path="/flow"/>
+		<file:write doc:id="027448d5-1dc9-4a07-a696-fb40d266b33e" path="D:\File_flow\">
+			<file:content ><![CDATA[hi this is write activity]]></file:content>
+		</file:write>
+		<logger level="INFO" doc:name="Logger" doc:id="8bba19e0-8c6c-4494-990d-ed5e5ec868ce" />
+	</flow>
+</mule>
