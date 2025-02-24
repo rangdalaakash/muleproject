@@ -1,0 +1,172 @@
+#%RAML 1.0
+title: calculator-api
+version: v1
+protocols:
+  - HTTP
+mediaType: application/json
+
+/calculator:
+  /addition:
+    get:
+      description: Performs addition of two numbers.
+      queryParameters:
+        number1:
+          type: integer
+          required: true
+        number2:
+          type: integer
+          required: true
+      responses:
+        200:
+          body:
+            application/json:
+              example: |
+                {
+                  "result": "Sum is 44"
+                }
+        400:
+          body:
+            application/json:
+              example: |
+                {
+                  "result": "Bad request"
+                }
+    post:
+      description: Adds two numbers from request body.
+      body:
+        application/json:
+          type: object
+          properties:
+            number1: integer
+            number2: integer
+      responses:
+        200:
+          body:
+            application/json:
+              example: |
+                {
+                  "result": "Sum is 44"
+                }
+  /subtraction:
+    get:
+      description: Performs subtraction of two numbers.
+      queryParameters:
+        number1:
+          type: integer
+          required: true
+        number2:
+          type: integer
+          required: true
+      responses:
+        200:
+          body:
+            application/json:
+              example: |
+                {
+                  "result": "Difference is 5"
+                }
+        400:
+          body:
+            application/json:
+              example: |
+                {
+                  "result": "Bad request"
+                }
+    patch:
+      description: Updates subtraction operation with new values.
+      body:
+        application/json:
+          type: object
+          properties:
+            number1: integer
+            number2: integer
+      responses:
+        200:
+          body:
+            application/json:
+              example: |
+                {
+                  "result": "Updated Difference is 5"
+                }
+  /multiplication:
+    get:
+      description: Performs multiplication of two numbers.
+      queryParameters:
+        number1:
+          type: integer
+          required: true
+        number2:
+          type: integer
+          required: true
+      responses:
+        200:
+          body:
+            application/json:
+              example: |
+                {
+                  "result": "Product is 20"
+                }
+        400:
+          body:
+            application/json:
+              example: |
+                {
+                  "result": "Bad request"
+                }
+    put:
+      description: Updates multiplication operation with new values.
+      body:
+        application/json:
+          type: object
+          properties:
+            number1: integer
+            number2: integer
+      responses:
+        200:
+          body:
+            application/json:
+              example: |
+                {
+                  "result": "Updated Product is 20"
+                }
+  /division:
+    get:
+      description: Performs division of two numbers.
+      queryParameters:
+        number1:
+          type: integer
+          required: true
+        number2:
+          type: integer
+          required: true
+      responses:
+        200:
+          body:
+            application/json:
+              example: |
+                {
+                  "result": "Quotient is 2"
+                }
+        400:
+          body:
+            application/json:
+              example: |
+                {
+                  "result": "Bad request or division by zero"
+                }
+    post:
+      description: Performs division from request body.
+      body:
+        application/json:
+          type: object
+          properties:
+            number1: integer
+            number2: integer
+      responses:
+        200:
+          body:
+            application/json:
+              example: |
+                {
+                  "result": "Quotient is 2"
+                }
