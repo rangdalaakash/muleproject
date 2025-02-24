@@ -15,5 +15,6 @@ http://www.mulesoft.org/schema/mule/file http://www.mulesoft.org/schema/mule/fil
 			<file:content ><![CDATA[hi this is write activity]]></file:content>
 		</file:write>
 		<logger level="INFO" doc:name="Logger" doc:id="8bba19e0-8c6c-4494-990d-ed5e5ec868ce" />
+		<logger level="INFO" doc:name="Logger" doc:id="4264508c-6d59-4350-88d3-ba2c9317a019" message="Hi Mule intigration tool course"/>
 	</flow>
 </mule>
