@@ -15,5 +15,6 @@ http://www.mulesoft.org/schema/mule/file http://www.mulesoft.org/schema/mule/fil
 			<file:content ><![CDATA[hi this is write activity]]></file:content>
 		</file:write>
 		<logger level="INFO" doc:name="Logger" doc:id="8bba19e0-8c6c-4494-990d-ed5e5ec868ce" />
+		<logger level="INFO" doc:name="Logger" doc:id="f4bf7d44-e0e9-45d1-bb25-ffd59ad9827c" message="hyderabad is famous for charminar"/>
 	</flow>
 </mule>
